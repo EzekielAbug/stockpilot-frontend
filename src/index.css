@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+
+  --bg-color: #E8E8F0;
+  --text-color: #2A3A4A;
+  --primary: #C8D8E8;
+  --primary-dark: #b0c6db; 
+  --secondary: #8AA8C8;
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --spacing-lg: 32px;
+  --spacing-md: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255,255,255,0.8) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(200,216,232,0.8) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  padding: var(--spacing-lg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-color);
+  box-shadow: 0 2px 10px rgba(200, 216, 232, 0.5);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(138, 168, 200, 0.1);
+}
