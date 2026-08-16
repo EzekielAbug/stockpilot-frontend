@@ -13,7 +13,7 @@
 ## Live Demo
 
 The application is deployed on Vercel's Edge Network.
-**Production URL:** [https://stockpilot-ten.vercel.app](https://stockpilot-ten.vercel.app)
+**Production URL:** [https://stockpilot-webinv.vercel.app](https://stockpilot-webinv.vercel.app)
 
 *Note: You can register a free account to test the multi-tenant isolation, or explore the interface yourself!*
 
