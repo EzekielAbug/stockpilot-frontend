@@ -74,12 +74,13 @@ const LandingPage = () => {
             <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#27c93f' }}></div>
           </div>
           <video 
-            src="https://github.com/user-attachments/assets/0637151b-ba90-4298-ada8-8d0e4261a0ee" 
+            src="https://github.com/user-attachments/assets/e2711617-8bc3-46bb-9565-d8f89addecb9" 
             autoPlay 
             loop 
             muted 
             playsInline 
-            style={{ width: '100%', display: 'block', backgroundColor: '#fff' }}
+            preload="auto"
+            style={{ width: '100%', display: 'block', backgroundColor: '#f9fafb' }}
           ></video>
         </div>
       </section>
