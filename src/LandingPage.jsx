@@ -40,7 +40,7 @@ const LandingPage = () => {
         <p style={{ fontSize: '22px', color: '#666', marginBottom: '40px', maxWidth: '700px', margin: '0 auto 40px auto', lineHeight: '1.5' }}>
           StockPilot is the modern, lightning-fast OS for retail and wholesale. Track stock across warehouses, process sales, and manage suppliers in one beautiful workspace.
         </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '64px' }}>
           <button 
             style={{ padding: '16px 32px', fontSize: '18px', borderRadius: '30px', backgroundColor: 'var(--primary)', color: 'var(--text-color)', border: 'none', cursor: 'pointer', fontWeight: '600' }}
             onMouseOver={e => e.currentTarget.style.transform = 'translateY(-2px)'}
@@ -55,8 +55,32 @@ const LandingPage = () => {
             onMouseOut={e => e.currentTarget.style.backgroundColor = 'white'}
             onClick={() => navigate('/login')}
           >
-            View Live Demo
+            Sign In
           </button>
+        </div>
+
+        {/* VIDEO DEMO */}
+        <div style={{ 
+          maxWidth: '1000px', 
+          margin: '0 auto', 
+          borderRadius: '16px', 
+          overflow: 'hidden', 
+          boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
+          border: '1px solid rgba(0,0,0,0.1)'
+        }}>
+          <div style={{ height: '32px', backgroundColor: '#f1f1f1', display: 'flex', alignItems: 'center', padding: '0 16px', gap: '8px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+            <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ff5f56' }}></div>
+            <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ffbd2e' }}></div>
+            <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#27c93f' }}></div>
+          </div>
+          <video 
+            src="https://github.com/user-attachments/assets/0637151b-ba90-4298-ada8-8d0e4261a0ee" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            style={{ width: '100%', display: 'block', backgroundColor: '#fff' }}
+          ></video>
         </div>
       </section>
 
