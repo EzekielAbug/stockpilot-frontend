@@ -35,7 +35,10 @@ const Sidebar = () => {
       boxSizing: 'border-box'
     }}>
       <div style={{ fontWeight: '800', fontSize: '24px', color: 'var(--text-color)', marginBottom: '48px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-        ✈️ StockPilot
+        <div style={{ padding: '8px', backgroundColor: 'var(--primary)', borderRadius: '12px', color: 'var(--text-color)', display: 'flex' }}>
+          <Package size={24} />
+        </div>
+        StockPilot
       </div>
 
       <nav style={{ display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>

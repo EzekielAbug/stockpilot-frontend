@@ -1,5 +1,5 @@
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { ChevronLeft, LayoutDashboard } from 'lucide-react';
+import { ChevronLeft, LayoutDashboard, Package } from 'lucide-react';
 
 const TopNav = () => {
   const navigate = useNavigate();
@@ -41,8 +41,11 @@ const TopNav = () => {
         </Link>
       </div>
       
-      <div style={{ fontWeight: '600', color: 'var(--text-color)', opacity: 0.7 }}>
-        StockPilot ✈️
+      <div style={{ fontWeight: '600', color: 'var(--text-color)', opacity: 0.7, display: 'flex', alignItems: 'center', gap: '8px' }}>
+        StockPilot 
+        <div style={{ padding: '4px', backgroundColor: 'var(--primary)', borderRadius: '6px', color: 'var(--text-color)', display: 'flex' }}>
+          <Package size={16} />
+        </div>
       </div>
     </div>
   );
