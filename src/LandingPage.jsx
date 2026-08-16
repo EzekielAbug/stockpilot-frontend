@@ -1,8 +1,18 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Package, TrendingUp, ShieldCheck, ArrowRight, LayoutDashboard, Search, Zap, ShoppingCart } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay was prevented:", error);
+      });
+    }
+  }, []);
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#fafafa', color: '#1a1a1a', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
@@ -74,11 +84,12 @@ const LandingPage = () => {
             <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#27c93f' }}></div>
           </div>
           <video 
+            ref={videoRef}
             src="https://github.com/user-attachments/assets/e2711617-8bc3-46bb-9565-d8f89addecb9" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            playsInline={true}
             preload="auto"
             style={{ width: '100%', display: 'block', backgroundColor: '#f9fafb' }}
           ></video>
