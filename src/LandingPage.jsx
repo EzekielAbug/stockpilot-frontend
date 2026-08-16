@@ -85,7 +85,7 @@ const LandingPage = () => {
           </div>
           <video 
             ref={videoRef}
-            src="https://github.com/user-attachments/assets/e2711617-8bc3-46bb-9565-d8f89addecb9" 
+            src="/demo.mp4" 
             autoPlay={true}
             loop={true}
             muted={true}
