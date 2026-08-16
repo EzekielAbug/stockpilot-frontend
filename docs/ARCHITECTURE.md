@@ -47,9 +47,9 @@ sequenceDiagram
     
     U->>P: Selects Customer from Dropdown
     U->>P: Clicks "Add to Order" on Product
-    P->>P: Update local cart state (quantity, total)
+    P->>P: Update local cart state quantity and total
     U->>P: Clicks "Submit Order"
-    P->>A: POST /api/v1/orders (payload)
+    P->>A: POST /api/v1/orders with payload
     A-->>P: 201 Created
     P->>P: Clear local cart state
     P->>U: Show Success Toast
