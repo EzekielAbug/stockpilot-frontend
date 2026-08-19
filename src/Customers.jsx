@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Users, Plus, Mail, Phone, Edit, Trash2, Upload } from 'lucide-react';
 import toast from 'react-hot-toast';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 import api from './api';
 import ImportCSV from './ImportCSV';
 
@@ -32,19 +34,12 @@ const Customers = () => {
     fetchCustomers();
   }, []);
 
-  const validatePhone = (phone) => {
-    if (!phone) return true;
-    const regex = /^\+?[0-9]{7,15}$/;
-    const cleanPhone = phone.replace(/[\s\-\(\)]/g, "");
-    return regex.test(cleanPhone);
-  };
-
   const handleAddSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
 
-    if (!validatePhone(formData.phone)) {
-      return toast.error("Invalid phone format. Please use a valid number (e.g. +639123456789).");
+    if (formData.phone && !isValidPhoneNumber(formData.phone)) {
+      return toast.error("Invalid phone format. Please select a country and enter a valid number.");
     }
 
     setIsSubmitting(true);
@@ -146,8 +141,15 @@ const Customers = () => {
           </div>
           <div style={{ display: 'flex', gap: '16px' }}>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontWeight: '600' }}>Phone (e.g. +639...)</label>
-              <input type="text" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="glass-panel" style={{ padding: '12px', border: '1px solid var(--secondary)' }} placeholder="+639123456789" />
+              <label style={{ fontWeight: '600' }}>Phone</label>
+              <PhoneInput 
+                international
+                defaultCountry="PH"
+                value={formData.phone} 
+                onChange={(value) => setFormData({...formData, phone: value})} 
+                className="glass-panel" 
+                style={{ padding: '12px', border: '1px solid var(--secondary)', borderRadius: '8px' }} 
+              />
             </div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <label style={{ fontWeight: '600' }}>Address</label>

@@ -16,6 +16,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-hot-toast": "^2.6.0",
+    "react-phone-number-input": "^3.4.17",
     "react-router-dom": "^7.18.2",
     "recharts": "^3.10.1"
   },
