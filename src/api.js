@@ -18,10 +18,12 @@ api.interceptors.response.use(
   (error) => {
     // If we get a 401 Unauthorized, the token is expired or invalid
     if (error.response && error.response.status === 401) {
-      // Clear token and redirect to login
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = '/'; // Assuming '/' is the login route
+      // Don't redirect if the user is explicitly trying to log in (wrong password)
+      if (error.config && error.config.url && !error.config.url.includes('/auth/login')) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }
